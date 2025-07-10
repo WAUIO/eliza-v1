@@ -5,10 +5,7 @@ module.exports = {
       cwd: '/var/www/eliza-evo',
       script: 'elizaos',
       args: 'start --character=characters/evolucia.character.json',
-      env: {
-        NODE_ENV: 'production',
-        SERVER_PORT: 3000
-      },
+      env: {},
       autorestart: true,
       watch: false,
       max_memory_restart: '3G',

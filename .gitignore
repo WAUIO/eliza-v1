@@ -180,3 +180,6 @@ tasks/
 .roomodes
 
 gcloud/
+!gcloud/.gitkeep
+characters/
+!characters/.gitkeep

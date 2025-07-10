@@ -1,0 +1,29 @@
+name: Deploy to GCE
+
+on:
+  push:
+    branches: [wau/develop]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Deploy to GCE
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.GCE_HOST }}
+        username: ${{ secrets.GCE_USER }}
+        key: ${{ secrets.GCE_SSH_KEY }}
+        script: |
+          source ~/.bashrc
+          export PATH="$PATH:/home/tmralala/.bun/bin"
+          cd /var/www/eliza-evo
+          git pull origin wau/main
+          
+          ./scripts/demo/launch.sh
+    # env:
+    #     GH_USER: ${{ github.actor }}
+    #     GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
