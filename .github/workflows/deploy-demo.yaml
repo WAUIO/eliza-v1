@@ -20,7 +20,7 @@ jobs:
         key: ${{ secrets.GCE_SSH_KEY }}
         script: |
           source ~/.bashrc
-          export PATH="$PATH:/home/tmralala/.bun/bin"
+          export PATH="$PATH:/home/tmralala/.bun/bin:/home/tmralala/.nvm/versions/node/v23.3.0/bin"
           cd /var/www/eliza-evo
           git pull origin wau/main
           
