@@ -4,7 +4,7 @@ module.exports = {
       name: 'eliza-agent',
       cwd: '/var/www/eliza-evo',
       script: 'elizaos',
-      args: 'start --character="characters/evolucia.character.json"',
+      args: 'start --character=characters/evolucia.character.json',
       env: {
         NODE_ENV: 'production',
         SERVER_PORT: 3000
